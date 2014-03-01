@@ -1,0 +1,42 @@
+<%= form_for(@collection) do |f| %>
+  <% if @collection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@collection.errors.count, "error") %> prohibited this collection from being saved:</h2>
+
+      <ul>
+      <% @collection.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :book %>
+    <%= f.text_field :book %>
+  </div>
+  <div class="field">
+    <%= f.label :chapter %>
+    <%= f.text_field :chapter %>
+  </div>
+  <div class="field">
+    <%= f.label :article %>
+    <%= f.text_field :article %>
+  </div>
+  <div class="field">
+    <%= f.label :dissertation %>
+    <%= f.text_field :dissertation %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+  <p>
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list %>
+  </p>
+  <div class="actions">
+    <%= f.submit :class => "small button radius" %>
+  </div>
+<% end %>

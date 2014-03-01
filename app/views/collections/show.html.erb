@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @collection.book %>
+</p>
+
+<p>
+  <strong>Chapter:</strong>
+  <%= @collection.chapter %>
+</p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @collection.article %>
+</p>
+
+<p>
+  <strong>Dissertation:</strong>
+  <%= @collection.dissertation %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @collection.notes %>
+</p>
+<p>
+  <strong>Tag List:</strong>
+  <%= @collection.tag_list %>
+</p>
+<p>
+  <strong>Tags:</strong>
+  <% @collection.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
+
+<div class="button-bar">
+  <ul class="button-group round">
+    <li><%= link_to ' Edit', edit_collection_path(@collection), :class => "fi-pencil icon-small small button secondary" %></li>
+    <li><%= link_to ' Collections', collections_path, :class => "fi-list icon-small small button secondary" %></li>
+  </ul>
+</div>
+

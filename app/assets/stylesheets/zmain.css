@@ -1,0 +1,38 @@
+/*Icon Size and Color Controls*/
+
+.icon-large{
+  font-size: 70px;
+}
+
+.icon-medium{
+  font-size: 50px;
+}
+
+.icon-small{
+  font-size: 30px;
+}
+
+.icon-xsmall{
+  font-size: 20px;
+}
+
+/*Button Bar*/
+
+.button-bar{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.button-group {
+  {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}

@@ -1,0 +1,7 @@
+<h1>Collections Tagged with <%= @tag.name %></h1>
+
+<ul>
+  <% @tag.collections.each do |collection| %>
+    <li><%= link_to collection.book, collection_path(collection) %></li>
+  <% end %>
+</ul>
