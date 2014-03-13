@@ -9,6 +9,7 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'zurb-foundation'
+gem "paperclip"
 
 
 # Use Uglifier as compressor for JavaScript assets

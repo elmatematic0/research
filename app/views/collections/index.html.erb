@@ -7,7 +7,8 @@
   <col width="auto">
   <col width="autoo">
   <col width="auto">
-  <col width="215">
+  <col width="auto">
+  <col width="220">
   <thead>
     <tr>
       <th>Book</th>
@@ -15,6 +16,7 @@
       <th>Article</th>
       <th>Dissertation</th>
       <th>Notes</th>
+      <th>Attachment</th>
       <th>Tags</th>
       <th>Action</th>
       
@@ -28,8 +30,20 @@
         <td><%= collection.chapter %></td>
         <td><%= collection.article %></td>
         <td><%= collection.dissertation %></td>
+        <td>
+          <% if collection.document.exists? %>
+          <%= link_to collection.document_file_name, collection.document.url %></td>
+          <% end %>
         <td><%= collection.notes %></td>
-        <td><%= collection.tag_list %></td>
+        <td><%= collection.tag_list %>
+          
+          <!-- attempt to have tags as clickable links 
+          collection.taggings.each do |tag| %>
+
+          link_to collection.tags.find(tag), tag_path(tag) %>
+          end %>
+         -->
+        </td>
         <td>
           <div class="button-bar">
             <ul class="button-group round">

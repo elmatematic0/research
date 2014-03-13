@@ -25,8 +25,10 @@
   <%= @collection.notes %>
 </p>
 <p>
-  <strong>Tag List:</strong>
-  <%= @collection.tag_list %>
+  <strong>Documents:</strong>
+  <% if @collection.document.exists? %>
+    <%= link_to @collection.document_file_name, @collection.document.url %>
+    <% end %>
 </p>
 <p>
   <strong>Tags:</strong>
