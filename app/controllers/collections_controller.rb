@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   include CollectionsHelper
   before_action :set_collection, only: [:show, :edit, :update, :destroy]
-
+  before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /collections
   # GET /collections.json

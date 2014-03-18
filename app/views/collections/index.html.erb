@@ -3,9 +3,9 @@
 <table>
   <col width="auto">
   <col width="auto">
-  <col width="autoo">
   <col width="auto">
-  <col width="autoo">
+  <col width="auto">
+  <col width="auto">
   <col width="auto">
   <col width="auto">
   <col width="220">
@@ -30,11 +30,11 @@
         <td><%= collection.chapter %></td>
         <td><%= collection.article %></td>
         <td><%= collection.dissertation %></td>
+        <td><%= collection.notes %> </td>
         <td>
           <% if collection.document.exists? %>
           <%= link_to collection.document_file_name, collection.document.url %></td>
           <% end %>
-        <td><%= collection.notes %></td>
         <td><%= collection.tag_list %>
           
           <!-- attempt to have tags as clickable links 
@@ -45,11 +45,15 @@
          -->
         </td>
         <td>
+          <% if logged_in? %>
           <div class="button-bar">
             <ul class="button-group round">
               <li><%= link_to ' View', collection, :class => "fi-results icon-small small button secondary" %></li>
               <li><%= link_to ' Edit', edit_collection_path(collection), :class => "fi-pencil icon-small small button secondary" %></li>
               <li><%= link_to ' Trash', collection, :class => "fi-trash icon-small small button secondary", method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <% else %>
+                <%= link_to ' View', collection, :class => "fi-results icon-small small button secondary" %>
+              <% end %>
             </ul>
           </div>
         </td>  
@@ -59,6 +63,7 @@
 </table>
 
 <br>
-
+<% if logged_in? %>
 <%= link_to 'New Collection', new_collection_path, :class => "small button radius" %>
+<% end %>
 
