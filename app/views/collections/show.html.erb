@@ -20,14 +20,16 @@
   <%= @collection.dissertation %>
 </p>
 
+<!-- TODO: add attachment for notes. -->
 <p>
   <strong>Notes:</strong>
   <%= @collection.notes %>
 </p>
+
 <p>
-  <strong>Documents:</strong>
+  <strong>Publication:</strong>
   <% if @collection.document.exists? %>
-    <%= link_to @collection.document_file_name, @collection.document.url %>
+    <img src="<%= @collection.document.url %>">
     <% end %>
 </p>
 <p>
